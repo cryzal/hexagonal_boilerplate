@@ -17,7 +17,11 @@ type Routes struct {
 func (r *Routes) RegisterRouter() {
 	outletHandler := outlet.New(r.PortOutlet)
 
-	merchantRoute := r.HTTPHandler.Framework.Group("/outlets")
-	merchantRoute.Use(r.Auth())
-	merchantRoute.GET("/:outlet_id", outletHandler.Get)
+	outletRoute := r.HTTPHandler.Framework.Group("/outlets")
+	outletRoute.Use(r.Auth())
+	outletRoute.GET("/:outlet_id", outletHandler.Get)
+	outletRoute.POST("", outletHandler.Create)
+	outletRoute.PUT("/:outlet_id", outletHandler.Edit)
+	outletRoute.PUT("/publisher/:outlet_id", outletHandler.EditPublisher)
+
 }

@@ -30,6 +30,13 @@ func ReadConfig(AppConfig string) *Config {
 	rmqUsername := os.Getenv("RMQ_USERNAME")
 	rmqPass := os.Getenv("RMQ_PASSWORD")
 
+	redisHost := os.Getenv("REDIS_HOST")
+	redisPort := os.Getenv("REDIS_PORT")
+	redisUsername := os.Getenv("REDIS_USERNAME")
+	redisPass := os.Getenv("REDIS_PASSWORD")
+	redisTls, _ := strconv.ParseBool(os.Getenv("REDIS_TLS"))
+	redisDB := os.Getenv("REDIS_DB")
+
 	config := Config{
 		Port: port,
 		Database: Database{
@@ -55,6 +62,13 @@ func ReadConfig(AppConfig string) *Config {
 			Host: rmqUrl,
 			User: rmqUsername,
 			Pass: rmqPass,
+		}, Redis: Redis{
+			Host:     redisHost,
+			Port:     redisPort,
+			Username: redisUsername,
+			Password: redisPass,
+			Tls:      redisTls,
+			Db:       redisDB,
 		},
 	}
 	return &config

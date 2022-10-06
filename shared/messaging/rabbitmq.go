@@ -1,6 +1,7 @@
 package messaging
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	amqp "github.com/rabbitmq/amqp091-go"
@@ -8,10 +9,64 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 )
 
-var exchangeName = "product"
+var exchangeName = "boilerplate"
 var exchangeType = "direct"
+
+type publisherImpl struct {
+	rabbitMQChannel *amqp.Channel
+}
+
+// NewPublisher is
+// url "amqp://guest:guest@localhost:5672/"
+func NewPublisher(url string) *publisherImpl {
+
+	conn, err := amqp.Dial(url)
+	if err != nil {
+		return nil
+	}
+	//defer conn.Close()
+
+	ch, err := conn.Channel()
+	if err != nil {
+		return nil
+	}
+	//defer ch.Close()
+
+	return &publisherImpl{
+		rabbitMQChannel: ch,
+	}
+}
+
+// Publish is
+func (m *publisherImpl) Publish(topic string, data Payload) error {
+
+	dataInBytes, err := json.Marshal(data)
+	if err != nil {
+		return err
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	err = m.rabbitMQChannel.PublishWithContext(
+		ctx,
+		exchangeName, // exchange
+		topic,        // routing key
+		false,        // mandatory
+		false,        // immediate
+		amqp.Publishing{
+			ContentType: "text/plain",
+			Body:        dataInBytes,
+		})
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
 
 type subscriberImpl struct {
 	queueName string

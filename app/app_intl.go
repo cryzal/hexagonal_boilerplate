@@ -32,7 +32,7 @@ func NewIntl() func() driver.RegistryContract {
 			router: &intl.Routes{
 				HTTPHandler: httpHandler,
 				Config:      cfg,
-				PortOutlet:  service.OutletServiceNew(datasource.OutletRepo),
+				PortOutlet:  service.OutletServiceNew(datasource.OutletRepo, datasource.TransactionRepo, datasource.Publisher),
 			},
 		}
 

@@ -4,11 +4,57 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3208a582-8403-45ea-8891-23b5434cda37" name="Changes" comment="" />
+    <list default="true" id="3208a582-8403-45ea-8891-23b5434cda37" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/entities/outlet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/port/outlet/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/port/publisher/publisher.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/port/transaction/repository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/publisher/publisher.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/repository/mysql/mapper/outlet_mapper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/repository/mysql/models/outlet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/rest/common/response/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/rest/intl/outlet/request.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/rest/intl/outlet/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/worker/outlet/handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/worker/outlet/request.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/http_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/http_log.202210051700" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/http_log.202210061300" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/http_log.202210061400" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/messaging/redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app_intl.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app_intl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app_worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app_worker.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/port/outlet/application.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/port/outlet/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/port/outlet/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/service/outlet.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/service/outlet.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/outlet_gateway.go" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/outlet_gateway.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/repository/mysql/outlet_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/repository/mysql/outlet_repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/rest/intl/interceptor.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/rest/intl/interceptor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/rest/intl/outlet/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/rest/intl/outlet/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/rest/intl/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/rest/intl/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/worker/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/worker/worker.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/config/data.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/config/data.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/messaging/contract.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/messaging/contract.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/messaging/rabbitmq.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/messaging/rabbitmq.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/models/event/event_enum.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/models/event/event_enum.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
@@ -18,12 +64,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FfP15gM8iLs2GSFmU885U93OSq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
@@ -34,27 +84,21 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/home/agung/Documents/work/go/src/hexagonal_boilerplate"
+    "last_opened_file_path": "/home/agung/Documents/work/go/src/hexagonal_boilerplate",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "GitIgnore"
+    ]
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="hexagonal_boilerplate" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
-      <module name="hexagonal_boilerplate" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="DIRECTORY" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/interface/rest/common/response" />
+      <recent name="$PROJECT_DIR$/interface/rest/intl/outlet" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">

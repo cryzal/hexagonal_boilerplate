@@ -1,7 +1,7 @@
 package messaging
 
 type Publisher interface {
-	Publish(topic string, delayInMS int, payload Payload) error
+	Publish(topic string, payload Payload) error
 }
 
 type HandleFunc func(payload Payload, err error)

@@ -1,6 +1,6 @@
 package event
 
 const (
-	AllEvent  = "event"
-	AllEvent2 = "event2"
+	UpdateOutletEvent = "updateOutlet"
+	AllEvent2         = "event2"
 )

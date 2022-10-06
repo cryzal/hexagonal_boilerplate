@@ -5,6 +5,7 @@ type Config struct {
 	Database Database
 	Jwt      Jwt
 	Rabbitmq Rabbitmq
+	Redis    Redis
 }
 
 type Database struct {
@@ -35,4 +36,12 @@ type Rabbitmq struct {
 type JwtConfig struct {
 	Secret   string
 	ClientID string
+}
+type Redis struct {
+	Host     string
+	Port     string
+	Username string
+	Password string
+	Tls      bool
+	Db       string
 }

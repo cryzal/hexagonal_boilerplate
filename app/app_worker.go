@@ -28,7 +28,7 @@ func NewWorker() func() driver.RegistryContract {
 
 		cfg := config.ReadConfig("APP_INTL_ADDRESS")
 		datasource := infrastructure.NewOutletGateway(cfg)
-		subs := messaging.NewSubscriber("product")
+		subs := messaging.NewSubscriber("outlet")
 		return &app_worker{
 			Messaging: subs,
 			Host:      cfg.Rabbitmq.Host,
@@ -36,7 +36,7 @@ func NewWorker() func() driver.RegistryContract {
 			Password:  cfg.Rabbitmq.Pass,
 			router: &worker.Routes{
 				Config:     cfg,
-				PortOutlet: service.OutletServiceNew(datasource.OutletRepo),
+				PortOutlet: service.OutletServiceNew(datasource.OutletRepo, datasource.TransactionRepo, datasource.Publisher),
 				Messaging:  subs,
 			},
 		}
