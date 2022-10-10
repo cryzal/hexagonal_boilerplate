@@ -20,6 +20,13 @@ func ReadConfig(AppConfig string) *Config {
 	mysqlUsername := os.Getenv("DB_MYSQL_USER")
 	mysqlPassword := os.Getenv("DB_MYSQL_PASSWORD")
 	mysqlDbName := os.Getenv("DB_MYSQL_NAME")
+
+	mongoHost := os.Getenv("DB_MONGO_HOST")
+	mongoPort, _ := strconv.Atoi(os.Getenv("DB_MONGO_PORT"))
+	mongoUsername := os.Getenv("DB_MONGO_USER")
+	mongoPassword := os.Getenv("DB_MONGO_PASSWORD")
+	mongoDbName := os.Getenv("DB_MONGO_NAME")
+
 	mysqldebug, _ := strconv.ParseBool(os.Getenv("DB_MYSQL_DEBUG"))
 	mysqlmaxopenconns, _ := strconv.Atoi(os.Getenv("DB_MYSQL_POOL_MAXOPENCONNS"))
 	mysqlmaxidleconns, _ := strconv.Atoi(os.Getenv("DB_MYSQL_POOL_MAXIDLECONS"))
@@ -50,6 +57,13 @@ func ReadConfig(AppConfig string) *Config {
 				MaxOpenConn: mysqlmaxopenconns,
 				MaxIdleConn: mysqlmaxidleconns,
 				MaxLifetime: mysqlmaxlifetime,
+			},
+			Mongodb: Mongodb{
+				Host:     mongoHost,
+				Port:     mongoPort,
+				Username: mongoUsername,
+				Password: mongoPassword,
+				DBName:   mongoDbName,
 			},
 		},
 		Jwt: Jwt{

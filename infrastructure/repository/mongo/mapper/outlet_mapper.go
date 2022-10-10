@@ -2,9 +2,9 @@ package mapper
 
 import (
 	"errors"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"hexagonal_boilerplate/core/entities"
-	"hexagonal_boilerplate/infrastructure/repository/mysql/models"
-	"strconv"
+	"hexagonal_boilerplate/infrastructure/repository/mongo/models"
 )
 
 func MapToWriteModels(outlet *entities.Outlet) *models.OutletModel {
@@ -14,24 +14,22 @@ func MapToWriteModels(outlet *entities.Outlet) *models.OutletModel {
 		Phone: outlet.Phone,
 	}
 	if outlet.ID != nil {
-		outletIDint, err := strconv.ParseInt(*outlet.ID, 10, 64)
+		objID, err := primitive.ObjectIDFromHex(*outlet.ID)
 		if err != nil {
 			panic(err)
 		}
+		model.ID = objID
+	}
 
-		model.ID = &outletIDint
-	}
-	if outlet.Code != nil {
-		model.Code = outlet.Code
-	}
 	return &model
 }
 
 func MapToEntities(outletModel *models.OutletModel) (*entities.Outlet, error) {
-	primaryID := strconv.FormatInt(*outletModel.ID, 16)
+	primitiveID := outletModel.ID
+	primitiveIDString := primitiveID.Hex()
 	objEntity := &entities.Outlet{
-		ID:    &primaryID,
-		Code:  outletModel.Code,
+		ID:    &primitiveIDString,
+		Code:  &primitiveIDString,
 		Name:  outletModel.Name,
 		Email: outletModel.Email,
 		Phone: outletModel.Phone,

@@ -44,7 +44,9 @@ func (s *Service) Create(req *port.InportCreateReq) error {
 
 	c := context.Background()
 	err = s.TransactionRepo.WithinTransaction(c, func(ctx context.Context) error {
+
 		err := s.OutletRepo.Create(ctx, outlet)
+
 		if err != nil {
 			return err
 		}

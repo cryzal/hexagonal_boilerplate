@@ -6,6 +6,7 @@ import (
 	"hexagonal_boilerplate/core/entities"
 	"hexagonal_boilerplate/infrastructure/repository/mysql/mapper"
 	"hexagonal_boilerplate/infrastructure/repository/mysql/models"
+	"strconv"
 )
 
 type (
@@ -46,7 +47,9 @@ func (r *RepositoryOutlet) Create(c context.Context, outlet *entities.Outlet) er
 	if err := store.Error; err != nil {
 		return err
 	}
-	outlet.SetID(objModel.ID, objModel.Code)
+
+	primaryID := strconv.FormatInt(*objModel.ID, 16)
+	outlet.SetID(&primaryID, objModel.Code)
 	return nil
 }
 

@@ -5,7 +5,7 @@ import (
 )
 
 type Outlet struct {
-	ID    *int64
+	ID    *string
 	Code  *string
 	Name  string
 	Email string
@@ -33,7 +33,7 @@ func NewOutlet(name, email, phone string) (*Outlet, error) {
 	return &obj, nil
 }
 
-func (o *Outlet) SetID(id *int64, code *string) {
+func (o *Outlet) SetID(id *string, code *string) {
 	o.ID = id
 	o.Code = code
 }

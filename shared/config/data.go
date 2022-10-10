@@ -9,7 +9,8 @@ type Config struct {
 }
 
 type Database struct {
-	Mysql Mysql
+	Mysql   Mysql
+	Mongodb Mongodb
 }
 
 type Mysql struct {
@@ -22,6 +23,14 @@ type Mysql struct {
 	MaxOpenConn int
 	MaxIdleConn int
 	MaxLifetime int
+}
+
+type Mongodb struct {
+	Host     string
+	Port     int
+	Username string
+	Password string
+	DBName   string
 }
 type Jwt struct {
 	Intl JwtConfig
