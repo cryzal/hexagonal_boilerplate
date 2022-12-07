@@ -1,11 +1,11 @@
 package intl
 
 import (
-	"fmt"
+	"net/http"
+
 	"github.com/golang-jwt/jwt"
 	"github.com/labstack/echo/v4"
 	mid "github.com/labstack/echo/v4/middleware"
-	"net/http"
 )
 
 func (r *Routes) Auth() echo.MiddlewareFunc {
@@ -23,8 +23,7 @@ func (r *Routes) Auth() echo.MiddlewareFunc {
 			claims := u.Claims.(jwt.MapClaims)
 			id := claims["id"]
 			ClientID := r.Config.Jwt.Extl.ClientID
-			fmt.Println(id)
-			fmt.Println(ClientID)
+
 			if id != ClientID {
 				return echo.NewHTTPError(http.StatusForbidden, "Client ID unauthorize!")
 			}

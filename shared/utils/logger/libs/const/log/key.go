@@ -12,6 +12,7 @@ const (
 	ORDER_ID              = "majoo_order_id"
 	VARIANT_GROUP_ID      = "majoo_variant_id"
 	SHOP_ID               = "majoo_shop_id"
+	OUTLET_ID             = "outlet_id"
 	SID                   = "majoo_data_sid"
 	PROVIDER              = "provider"
 	PRODUCT_NUMBER        = "majoo_product_number"
