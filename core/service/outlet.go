@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"hexagonal_boilerplate/core/entities"
+	"hexagonal_boilerplate/core/domain/entities"
 	port "hexagonal_boilerplate/core/port/outlet"
 	portPublisher "hexagonal_boilerplate/core/port/publisher"
 	portDBTransaction "hexagonal_boilerplate/core/port/transaction"

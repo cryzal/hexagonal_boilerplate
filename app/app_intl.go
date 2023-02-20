@@ -25,7 +25,7 @@ func NewIntl() func() driver.RegistryContract {
 		cfg := config.ReadConfig("APP_INTL_ADDRESS")
 
 		httpHandler := rest.NewEchoHTTPHandlerDefault(cfg)
-		datasource := infrastructure.NewOutletGateway(cfg)
+		datasource := infrastructure.NewIntlGateway(cfg)
 
 		return &Intl{
 			httpHandler: &httpHandler,

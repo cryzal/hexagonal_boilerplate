@@ -2,11 +2,12 @@ package mysql
 
 import (
 	"context"
-	"gorm.io/gorm"
-	"hexagonal_boilerplate/core/entities"
+	"hexagonal_boilerplate/core/domain/entities"
 	"hexagonal_boilerplate/infrastructure/repository/mysql/mapper"
 	"hexagonal_boilerplate/infrastructure/repository/mysql/models"
 	"strconv"
+
+	"gorm.io/gorm"
 )
 
 type (

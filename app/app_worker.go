@@ -27,7 +27,7 @@ func NewWorker() func() driver.RegistryContract {
 	return func() driver.RegistryContract {
 
 		cfg := config.ReadConfig("APP_INTL_ADDRESS")
-		datasource := infrastructure.NewOutletGateway(cfg)
+		datasource := infrastructure.NewIntlGateway(cfg)
 		subs := messaging.NewSubscriber("outlet")
 		return &app_worker{
 			Messaging: subs,

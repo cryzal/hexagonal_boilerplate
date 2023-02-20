@@ -7,7 +7,7 @@ import (
 	"hexagonal_boilerplate/shared/messaging"
 )
 
-type OutletGateway struct {
+type IntlGateway struct {
 	OutletRepo *mysql.RepositoryOutlet
 	//OutletRepo *mongo.RepositoryOutlet
 	TransactionRepo *mysql.RepositoryDbtransaction
@@ -15,7 +15,7 @@ type OutletGateway struct {
 	Publisher *publisher.MessagePublisher
 }
 
-func NewOutletGateway(cfg *config.Config) *OutletGateway {
+func NewIntlGateway(cfg *config.Config) *IntlGateway {
 
 	/// example mysql
 	db := mysql.Connect(cfg)
@@ -26,7 +26,7 @@ func NewOutletGateway(cfg *config.Config) *OutletGateway {
 	/// rabbitmq example
 	pub := messaging.NewPublisher("amqp://" + cfg.Rabbitmq.User + ":" + cfg.Rabbitmq.Pass + "@" + cfg.Rabbitmq.Host + "")
 
-	return &OutletGateway{
+	return &IntlGateway{
 		OutletRepo: mysql.NewOutletRepo(db),
 		//OutletRepo:      mongo.NewOutletRepo(db, cfg.Database.Mongodb.DBName),
 		TransactionRepo: mysql.NewDbtransactionRepo(db),

@@ -1,6 +1,7 @@
 package app
 
 import (
+	"hexagonal_boilerplate/core/service"
 	"hexagonal_boilerplate/interface/rest/extl"
 	"hexagonal_boilerplate/shared/config"
 	"hexagonal_boilerplate/shared/driver"
@@ -27,6 +28,7 @@ func NewExtl() func() driver.RegistryContract {
 			controller: &extl.Controller{
 				HTTPHandler: httpHandler,
 				Config:      cfg,
+				PortWebhook: service.NewWebhookService(),
 			},
 		}
 

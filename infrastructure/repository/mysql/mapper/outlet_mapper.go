@@ -2,7 +2,7 @@ package mapper
 
 import (
 	"errors"
-	"hexagonal_boilerplate/core/entities"
+	"hexagonal_boilerplate/core/domain/entities"
 	"hexagonal_boilerplate/infrastructure/repository/mysql/models"
 	"strconv"
 )

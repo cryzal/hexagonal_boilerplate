@@ -2,7 +2,7 @@ package outlet
 
 import (
 	"context"
-	"hexagonal_boilerplate/core/entities"
+	"hexagonal_boilerplate/core/domain/entities"
 )
 
 type (
